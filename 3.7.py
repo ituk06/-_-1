@@ -22,6 +22,7 @@ def mul16(x, y):
     result = (ac << 16) + ((ad + bc) << 8) + bd
     return result
 
+#ТЕСТ
 
 def test_mul16():
     for _ in range(10000):
@@ -32,3 +33,4 @@ def test_mul16():
 
 
 test_mul16()
+
