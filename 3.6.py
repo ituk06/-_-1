@@ -10,6 +10,7 @@ def fast_mul_rec(x, y):
     else:
         return fast_mul_rec(x << 1, y >> 1)
 
+#ТЕСТ
 
 def test_fast_mul_rec():
     for _ in range(1000):
@@ -20,3 +21,4 @@ def test_fast_mul_rec():
 
 
 test_fast_mul_rec()
+
