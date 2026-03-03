@@ -1,24 +1,21 @@
 import random
 
-
-def fast_mul_rec(x, y):
-
-    if y == 0:
-        return 0
-    if y & 1:
-        return x + fast_mul_rec(x << 1, y >> 1)
-    else:
-        return fast_mul_rec(x << 1, y >> 1)
+def fast_pow(x, n):
+    res = 1
+    while n > 0:
+        if n & 1:
+            res *= x
+        x *= x
+        n >>= 1
+    return res
 
 #ТЕСТ
 
-def test_fast_mul_rec():
+def test_fast_pow():
     for _ in range(1000):
-        a = random.randint(0, 1000)
-        b = random.randint(0, 1000)
-        assert fast_mul_rec(a, b) == a * b, f"Ошибка: {a} * {b} 🥴"
-    print("Все тесты пройдены 😻")
+        x = random.randint(1, 10)
+        n = random.randint(0, 20)
+        assert fast_pow(x, n) == x ** n
+    print("fast_pow: OK")
 
-
-test_fast_mul_rec()
-
+test_fast_pow()
